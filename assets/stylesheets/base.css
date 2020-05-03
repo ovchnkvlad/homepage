@@ -49,7 +49,7 @@ h3 {
 }
 h1 {
   font-weight: 900;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   margin-bottom: 0;
 }
 h2 {
@@ -270,7 +270,7 @@ article {
   right: 2em;
   bottom: 2em;
   border-color: inherit;
-  border-width: 1em;
+  border-width: 0.8em;
   border-style: solid;
   pointer-events: none;
   transition: border-color 0.2s ease-in-out;
@@ -568,7 +568,7 @@ article {
   display: flex;
   flex-wrap: wrap;
   padding: 0;
-  margin-top: 0;
+  margin-top: 5px;
   margin-bottom: 0;
   white-space: nowrap;
   font-size: 0.9em;
@@ -592,7 +592,7 @@ article {
   color: dimgrey;
 }
 .contacts li a.mail:hover {
-  color: dimgrey;
+  color: #d54d40;
 }
 .contacts li a.skype:hover {
   color: #00aff0;
@@ -830,12 +830,6 @@ li.bordered > ul > details > div {
   width: 0.88em;
   vertical-align: top;
   position: relative;
-}
-.color.midnightblue:before {
-  background-color: midnightblue;
-}
-.color.chartreuse:before {
-  background-color: chartreuse;
 }
 
 /* Audio button */
