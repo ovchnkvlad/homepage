@@ -54,11 +54,102 @@
     <link rel="me" href="skype:vlad.ovchnk" />
     <link rel="me" href="tel:+380993215980" />
     <link rel="stylesheet" href="./assets/stylesheets/base.css" />
+    <style>
+      /* Wave */
+      #wave {
+        color: #00c4ff;
+        padding-top: calc((100% - 1127px) / 2);
+        height: 7em;
+        box-sizing: content-box;
+        background: currentColor;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+      }
+      #wave svg {
+        display: block;
+        position: relative;
+        top: calc(7em - 1px);
+      }
+  
+      /* Credits */
+      .credits {
+        text-align: right;
+        padding: 0.5em 0.75em;
+        line-height: 1em;
+        transition: opacity 0.2s linear;
+        position: absolute;
+        top: 1em;
+        right: 1em;
+        color: white;
+        background: bisque;
+        border-radius: 15px;
+        transition: all 0.2s linear;
+      }
+      .credits:not(:hover) a {
+        color: indianred;
+      }
+      .credits:hover {
+        color:black;
+        background: white;
+      }
+  
+      /* Tags */
+      [data-tag] > *:first-child:after {
+        font-size: 0.6em;
+        line-height: 1rem;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        display: inline-block;
+        padding: 0em 0.75em;
+        border-radius: 15px;
+        height: 1rem;
+        margin-left: 0.5em;
+        margin-top: -1px;
+        vertical-align: middle;
+        box-shadow: inset 0 0 0 1px;
+        opacity: 0.5;
+        transition: opacity 0.2s linear;
+      }
+      [data-tag]:hover > *:first-child:after {
+        color: #ffffff;
+        opacity: 1;
+        box-shadow: none;
+      }
+      [data-tag="work"] > *:first-child:after { content: "work"; }
+      [data-tag="hackathon"] > *:first-child:after { content: "hackathon"; }
+      [data-tag="jam"] > *:first-child:after { content: "jam"; }
+      [data-tag="talk"] > *:first-child:after { content: "talk"; }
+      [data-tag="work"]:hover > *:first-child:after { background: blue; }
+      [data-tag="hackathon"]:hover > *:first-child:after { background: midnightblue; }
+      [data-tag="jam"]:hover > *:first-child:after { background: deepskyblue; }
+      [data-tag="talk"]:hover > *:first-child:after { background: fuchsia; }
+  
+      /* Highlighted list item */
+      ul:not(.timeline) > li.highlighted,
+      ul:not(.timeline) > li.bordered {
+        margin: 0.25em 0 0.25em -1.75em;
+        padding: 0.25em 0.5em 0.25em 1.75em;
+      }
+      ul:not(.timeline) > li.highlighted > div {
+        margin-bottom: 0.25em;
+      }
+    </style>
   </head>
   <body>
     <main>
+      <main>
+        <div id="wave">
+          <div class="credits">
+            Built using <a href="https://volodymyrkushnir.com/" rel="external"><strong>volodymyrkushnir.com</strong></a> 🧰
+          </div>
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" viewBox="414 334 1440 118">
+            <path fill="currentColor" d="M1168.4,421.2c266.9,49.9,515.4,28.9,685.6,8.8v-96H414v96C601.3,407.8,844,360.6,1168.4,421.2z"/>
+          </svg>
+        </div>
       <article>
-        <div class="page" style="border-color: midnightblue;">
+        <div class="page" style="border-color: #bbb;">
           <div class="stackable grid">
             <div class="row">
               <div class="three wide center aligned column">
@@ -150,20 +241,21 @@
                       </li>
                       <li>
                         <a
-                          href="https://github.com/ovchnkvlad"
+                          href="https://t.me/vlad_ovchynnyk"
                           rel="author"
-                          class="github"
+                          class="telegram"
                         >
                           <svg
                             class="icon"
                             xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 496 512"
+                            viewBox="0 0 448 512"
                           >
                             <path
-                              d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
-                            />
+                              fill="currentColor"
+                              d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"
+                            ></path>
                           </svg>
-                          <span>ovchnkvlad</span>
+                          <span>vlad_ovchynnyk</span>
                         </a>
                       </li>
                       <li>
