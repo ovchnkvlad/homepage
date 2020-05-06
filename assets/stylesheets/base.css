@@ -163,6 +163,14 @@ ol > li::before {
   margin-top: calc((1.4285rem - 1rem) / 2);
 }
 
+.timeline > li::before {
+  display: none;
+}
+
+.contacts li::before {
+  display: none;
+}
+
 ol.inverted > li::before {
   background: black;
   color: white;
@@ -509,13 +517,13 @@ article {
 
 /* Stackable */
 @media only screen and (max-width: 767px) {
-  .stackable.grid > .row > .wide.column,
   .stackable.grid > .wide.column,
-  .stackable.grid > .column.grid > .column,
-  .stackable.grid > .column.row > .column,
+  .stackable.grid > .row > .wide.column,
+  .grid > .stackable.row > .column,
   .stackable.grid > .row > .column,
   .stackable.grid > .column:not(.row),
-  .grid > .stackable.row > .column {
+  .stackable.grid > .column.grid > .column,
+  .stackable.grid > .column.row > .column {
     width: 100% !important;
     padding: 1em !important;
   }
@@ -624,10 +632,6 @@ article {
   margin-right: 1em;
 }
 
-.contacts li::before {
-  display: none;
-}
-
 .contacts li a {
   color: black;
   transition: color 0.2s ease-in-out;
@@ -654,7 +658,7 @@ article {
 }
 
 .contacts li a.telegram:hover {
-  color: #0088cc;
+  color: #08c;
 }
 
 .contacts li a.phone:hover {
@@ -695,14 +699,14 @@ details {
   display: block;
 }
 
-details > summary::-webkit-details-marker {
-  margin-left: 0.25em;
-  margin-right: 0.25em;
-}
-
 details > summary {
   display: list-item;
   cursor: pointer;
+}
+
+details > summary::-webkit-details-marker {
+  margin-left: 0.25em;
+  margin-right: 0.25em;
 }
 
 details > div {
@@ -746,6 +750,15 @@ details > div::after {
   cursor: pointer;
 }
 
+li.details > input {
+  float: left;
+  margin-left: -1.5em;
+}
+
+.details > div {
+  display: none;
+}
+
 .details > input:checked {
   transform: rotate(90deg);
 }
@@ -754,12 +767,17 @@ details > div::after {
   cursor: pointer;
 }
 
-.details > input:checked ~ div {
-  display: block;
+li.bordered > ul > details > div,
+li.bordered > ul > li.details > div {
+  padding: 0.5em 0.5em 0 2em;
+  border-top: 1px solid rgb(224, 224, 224);
+  margin-top: 0.5em;
+  margin-left: -2em;
+  margin-right: -0.5em;
 }
 
-.details > div {
-  display: none;
+.details > input:checked ~ div {
+  display: block;
 }
 
 .details > div.labels {
@@ -773,6 +791,7 @@ details > div::after {
 }
 
 /* Details as a standalone block */
+
 div.details > input:first-child {
   float: left;
 }
@@ -796,11 +815,6 @@ li.details::before {
   display: none;
 }
 
-li.details > input {
-  float: left;
-  margin-left: -1.5em;
-}
-
 /* Highlighted list item */
 li.highlighted {
   padding: 0.5em;
@@ -820,15 +834,6 @@ li.bordered:hover {
   background: #fafafa;
 }
 
-li.bordered > ul > li.details > div,
-li.bordered > ul > details > div {
-  padding: 0.5em 0.5em 0 2em;
-  border-top: 1px solid rgb(224, 224, 224);
-  margin-top: 0.5em;
-  margin-left: -2em;
-  margin-right: -0.5em;
-}
-
 /* Timeline */
 .timeline {
   list-style: none outside none;
@@ -838,10 +843,6 @@ li.bordered > ul > details > div {
 
 .timeline:not(:last-child) {
   margin-bottom: 1em;
-}
-
-.timeline > li::before {
-  display: none;
 }
 
 .timeline > li:not(:last-child) {
