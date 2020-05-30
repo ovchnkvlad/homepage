@@ -28,7 +28,7 @@
     <meta property="og:title" content="Vlad Ovchynnyk &mdash; Résumé" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ovchnkvlad.github.io/homepage/" />
-    <base href="https://ovchnkvlad.github.io/homepage/" />
+    <!-- <base href="https://ovchnkvlad.github.io/homepage/" /> -->
     <title>Vlad Ovchynnyk &mdash; Résumé</title>
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
     <!-- <link
@@ -57,9 +57,9 @@
     <style>
       /* Wave */
       #wave {
-        color: #00c4ff;
+        color: #23e5db;
         padding-top: calc((100% - 1127px) / 2);
-        height: 7em;
+        height: 12em;
         box-sizing: content-box;
         background: currentColor;
         position: absolute;
@@ -70,7 +70,7 @@
       #wave svg {
         display: block;
         position: relative;
-        top: calc(7em - 1px);
+        top: calc(12em - 1px);
       }
 
       /* Credits */
@@ -156,13 +156,6 @@
   <body>
     <main>
       <div id="wave">
-        <div class="credits">
-          Built using
-          <a href="https://volodymyrkushnir.com/" rel="external">
-            <strong>volodymyrkushnir.com</strong>
-          </a>
-          🧰
-        </div>
         <svg
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
@@ -180,17 +173,26 @@
         <div class="page" style="border-color: #bbb;">
           <div class="stackable grid">
             <div class="row" style="font-family: 'Oswald';">
-              <div class="three wide center aligned column">
+              <div class="four wide center aligned column">
                 <div class="avatar-wrapper">
-                  <object
+                  <!-- <object
                     class="avatar"
                     data="./assets/images/avatar.svg"
                     role="img"
                     aria-label="My profile picture"
-                  ></object>
+                  ></object> -->
+                  <img
+                    src="../assets/images/avatar.jpg"
+                    alt="avatar"
+                    style="
+                      width: 100%;
+                      border-radius: 100%;
+                      border: 3px solid #23e5db;
+                    "
+                  />
                 </div>
               </div>
-              <div class="thirteen wide column">
+              <div class="twelve wide column">
                 <div class="stackable grid">
                   <div class="sixteen wide column">
                     <h1 class="name">Vladyslav Ovchynnyk</h1>
@@ -339,7 +341,7 @@
                     <div class="divider"></div>
                   </div>
                   <div class="sixteen wide column">
-                    <h2>Résumé</h2>
+                    <h2>Resumé</h2>
                     <p>
                       &mdash; Hello! I’m a frontend developer with 2 years of
                       experience. I strive to constantly improve myself, craft
@@ -352,7 +354,7 @@
                 </div>
               </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
               <div class="sixteen wide column">
                 <div class="fat divider"></div>
               </div>
@@ -565,7 +567,7 @@
                   </ul>
                 </section>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </article>
