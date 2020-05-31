@@ -1,0 +1,9 @@
+{
+  "short_name": "VO",
+  "name": "Vladyslav Ovchynnyk",
+  "start_url": "/index.html",
+  "background_color": "black",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "dark"
+}

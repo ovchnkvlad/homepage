@@ -23,7 +23,7 @@ html,
 body {
   margin: 0;
   line-height: 1.4285em;
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(255, 255, 255, 0.87);
 }
 
 body {
@@ -69,6 +69,7 @@ h2 + p {
   font-weight: 300;
   font-size: 1.5rem;
   margin-bottom: 0.25em;
+  color: #fff;
 }
 
 h3 {
@@ -259,6 +260,9 @@ button:-moz-focusring,
 /* Utiltities */
 .nowrap {
   white-space: nowrap;
+}
+.name {
+  text-align: center;
 }
 
 /* Article */
@@ -552,6 +556,7 @@ article {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 25px;
 }
 
 .avatar {
@@ -619,6 +624,7 @@ article {
   list-style: none outside none;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   padding: 0;
   margin-top: 5px;
   margin-bottom: 0;
@@ -671,8 +677,10 @@ article {
 
 .contacts li a .icon {
   fill: currentColor;
-  height: 1.1428rem;
+  height: 1.35rem;
   vertical-align: text-bottom;
+  color: #fff;
+  margin: 5px;
 }
 
 @media only screen and (max-width: 767px) {
@@ -690,7 +698,10 @@ article {
 @media only screen and (max-width: 1199px) {
   .contacts {
     margin-top: 1em;
-    flex-direction: column;
+    flex-direction: row;
+  }
+  .avatar-wrapper img {
+    min-width: 150px;
   }
 }
 
@@ -1143,4 +1154,59 @@ footer {
   main:nth-last-child(3) {
     margin-bottom: 0;
   }
+}
+
+.btn {
+  display: inline-block;
+  background-color: transparent;
+  font-family: "Dosis", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  height: 50px;
+  line-height: 50px;
+  margin-right: 25px;
+  padding: 0 50px;
+  border: 1px solid #fff;
+  /* border-right: 1px solid #000; */
+  position: relative;
+  transition: color 0.2s ease-in-out 0s;
+}
+.btn:before,
+.btn:after {
+  content: "";
+  position: absolute;
+  top: 0;
+}
+.btn:before {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: -1;
+}
+.btn:after {
+  right: -1px;
+  width: 1px;
+  height: 50px;
+  background-color: #000;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  z-index: 0;
+  transition: width 0.3s ease-in-out, transform 0.2s ease-in-out 0.3s,
+    z-index 0.15s ease-in-out;
+}
+.btn:hover {
+  color: #fff;
+  transition: color 0.2s ease-in-out 0.25s;
+}
+.btn:hover:after {
+  z-index: -1;
+  transform: rotate(0deg);
+  width: 100%;
+  transition: transform 0.2s ease-in-out, width 0.3s ease-in-out 0.2s;
 }
